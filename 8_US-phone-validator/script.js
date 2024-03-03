@@ -33,6 +33,11 @@ const checkAnimation = () => {
     setTimeout(() => resultDiv.classList.remove("check-animation"), 2000);
 }
 
+const checkAnimationInvalid = () => {
+    resultDiv.classList.add("check-animation-invalid");
+    setTimeout(() => resultDiv.classList.remove("check-animation-invalid"), 2000);
+}
+
 const clearAnimation = () => {
     resultDiv.classList.add("clear-animation");
     setTimeout(() => resultDiv.classList.remove("clear-animation"), 2000);
@@ -43,11 +48,16 @@ check.addEventListener("click", () => {
         alert("Please provide a phone number");
         return;
     }
-    console.log(isValid(input.value));
-    checkAnimation();
-    result.innerHTML += isValid(input.value) 
-    ? `<p class="valid-result">Valid US number:<br>${input.value}</p>`
-    : `<p class="invalid-result">Invalid US number:<br>${input.value}</p>`
+    // result.innerHTML += isValid(input.value) 
+    // ? `<p class="valid-result">Valid US number:<br>${input.value}</p>`
+    // : `<p class="invalid-result">Invalid US number:<br>${input.value}</p>`
+    if (isValid(input.value)) {
+        checkAnimation();
+        result.innerHTML += `<p class="valid-result">Valid US number:<br>${input.value}</p>`
+    } else {
+        checkAnimationInvalid();
+        result.innerHTML += `<p class="invalid-result">Invalid US number:<br>${input.value}</p>`
+    }
     input.value = "";
 })
 
