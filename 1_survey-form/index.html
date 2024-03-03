@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for participating in this survey form. This will help us improve our platform.</p>
+    <form action="survey-form" method="post" id="survey-form">
+        <div>
+            <label for="name" id="name-label">
+                Name: <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </label>
+
+            <label for="email" id="email-label">
+                Email: <input type="email" name="email" id="email" placeholder="xxxx@yyyy.zzz" required>
+            </label>
+
+            <label for="number" id="number-label">
+                Age (optional): <input type="number" name="age" id="number" min="1" max="100" placeholder="1-100">
+            </label>
+        </div>
+        
+        <div>
+            <label for="dropdown">
+                Please select your current role:
+                <select name="role" id="dropdown">
+                    <option value="0">Select your role</option>
+                    <option value="1">Student</option>
+                    <option value="2">Part-time Empolyee</option>
+                    <option value="3">Full-time Empolyee</option>
+                    <option value="4">Prefer not to say</option>
+                    <option value="5">Other</option>
+                </select>
+            </label>
+        
+            <label for="radio"> 
+                Would you Recommend this site to a friend? <br><br>
+                <input class="inline" type="radio" name="radio" id="radio" value="radio-yes" checked> Absolutely <br>
+                <input class="inline" type="radio" name="radio" id="radip" value="radio-no"> Never
+            </label>
+
+            <label for="">
+                Which of these topics that you are intersted in? <br><br>
+                <input class="inline" type="checkbox" name="topics" id="checkbox" value="responsive"> Responsive Web Design <br>
+                <input class="inline" type="checkbox" name="topics" id="checkbox" value="fronted"> Front-end Web Develomnt <br>
+                <input class="inline" type="checkbox" name="topics" id="checkbox" value="backend"> Back-end Web Develomnt <br>
+                <input class="inline" type="checkbox" name="topics" id="checkbox" value="fulllstack"> Fullstack Web Develomnt <br>
+            </label>
+
+            <label for="comment">
+                Any comments or suggestion?
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter your comment"></textarea>
+            </label>
+
+            <input type="submit" id="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Python Documention</title>
+</head>
+<body>
+        <div class="left-panel">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="Python Logo">
+            <nav id="navbar">
+                <header>Python Documentation</header>
+                <ul>
+                    <a href="#Introduction" class="nav-link"><li>Introduction</li></a>
+                    <a href="#Using_Python_as_a_Calculator" class="nav-link"><li>Using Python as a Calculator</li></a>
+                    <a href="#More_Control_Flow_Tools" class="nav-link"><li>More Control Flow Tools</li></a>
+                    <a href="#Data_Structures" class="nav-link"><li>Data Structures</li></a>
+                    <a href="#Modules" class="nav-link"><li>Modules</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="right-panel">
+            <main id="main-doc">
+                <section class="main-section" id="Introduction">
+                    <header>Introduction</header>
+                    <p>Python is an easy to learn, powerful programming language. It has 
+                        efficient high-level data structures and a simple but effective 
+                        approach to object-oriented programming. Python’s elegant syntax and 
+                        dynamic typing, together with its interpreted nature, make it an ideal 
+                        language for scripting and rapid application development in many areas 
+                        on most platforms</p>
+
+                    <p>The Python interpreter and the extensive standard library are freely 
+                        available in source or binary form for all major platforms from the 
+                        Python web site, https://www.python.org/, and may be freely 
+                        distributed. The same site also contains distributions of and pointers 
+                        to many free third party Python modules, programs and tools, and 
+                        additional documentation.</p>
+
+                    <p>The Python interpreter is easily extended with new functions and data 
+                        types implemented in C or C++ (or other languages callable from C). 
+                        Python is also suitable as an extension language for customizable 
+                        applications.</p>
+                </section>
+
+                <section class="main-section" id="Using_Python_as_a_Calculator">
+                    <header>Using Python as a Calculator</header>
+                    <p>The interpreter acts as a simple calculator: you can type an expression 
+                        at it and it will write the value. Expression syntax is straightforward: 
+                        the operators +, -, * and / can be used to perform arithmetic; parentheses 
+                        (()) can be used for grouping. For example:
+                    </p>
+
+                    <div class="code-box">
+                        <code>
+                            >>> 2 + 2 <br />
+                            4 <br />
+                            >>> 50 - 5*6 <br />
+                            20 <br />
+                            >>> (50 - 5*6) / 4 <br />
+                            5.0 <br />
+                            >>> 8 / 5  # division always returns a floating point number <br />
+                            1.6 <br />
+                        </code>
+                    </div>
+
+                    <p>Python can manipulate text (represented by type str, so-called “strings”) 
+                        as well as numbers. This includes characters “!”, words “rabbit”, names 
+                        “Paris”, sentences “Got your back.”, etc. “Yay! :)”. They can be enclosed 
+                        in single quotes ('...') or double quotes ("...") with the same result</p>
+                    
+                    <div class="code-box">
+                        <code>
+                            >>> 'spam eggs' <br />
+                            'spam eggs' <br />
+                            >>> "Paris rabbit got your back :)! Yay!"  # double quotes <br />
+                            'Paris rabbit got your back :)! Yay!' <br />
+                            >>> '1975'  # digits and numerals enclosed in quotes are also strings <br />
+                            '1975' <br />
+                        </code>
+                    </div>
+                
+                    <p>Python knows a number of compound data types, used to group together other 
+                        values. The most versatile is the list, which can be written as a list of 
+                        comma-separated values (items) between square brackets. Lists might contain 
+                        items of different types, but usually the items all have the same type.</p>
+                    
+                    <div class="code-box">
+                        <code>
+                            >>> squares = [1, 4, 9, 16, 25] <br />
+                            >>> squares <br />
+                            [1, 4, 9, 16, 25] 
+                        </code>
+                    </div>
+
+                </section>
+
+                <section class="main-section" id="More_Control_Flow_Tools">
+                    <header>More Control Flow Tools</header>
+                    <p>Perhaps the most well-known statement type is the if statement. For example:</p>
+                    <div class="code-box">
+                        <code>
+                            >>> x = int(input("Please enter an integer: ")) <br />
+                            >>> Please enter an integer: 42 <br />
+                            >>> if x < 0: <br />
+                                x = 0 <br /> 
+                                print('Negative changed to zero') <br />
+                                elif x == 0: <br />
+                                    print('Zero') <br />
+                                elif x == 1: <br />
+                                    print('Single') <br />
+                                else: <br />
+                                    print('More') <br />
+                            More
+                        </code>
+                    </div>
+
+                    <p>The for statement in Python differs a bit from what you may be used to in C or 
+                        Pascal. Rather than always iterating over an arithmetic progression of 
+                        numbers (like in Pascal), or giving the user the ability to define both the 
+                        iteration step and halting condition (as C), Python’s for statement iterates 
+                        over the items of any sequence (a list or a string), in the order that they 
+                        appear in the sequence. For example (no pun intended):</p>
+                    <div class="code-box">
+                        <code>
+                            >>> # Measure some strings: <br />
+                                words = ['cat', 'window', 'defenestrate'] <br />
+                            >>> for w in words: <br />
+                                    print(w, len(w)) <br />
+                            cat 3 <br />
+                            window 6 <br />
+                            defenestrate 12 <br />
+                        </code>
+                    </div>
+
+                    <p>If you do need to iterate over a sequence of numbers, the built-in function 
+                        range() comes in handy. It generates arithmetic progressions:</p>
+                    <div class="code-box">
+                        <code>
+                            >>> for i in range(5): <br />
+                                print(i) <br />
+                            0 <br />
+                            1 <br />
+                            2 <br />
+                            3 <br />
+                            4 
+                        </code>
+                    </div>
+                </section>
+                <section class="main-section" id="Data_Structures">
+                    <header>Data Structures</header>
+                    <p>The list data type has some more methods. Here are all of the methods of list 
+                        objects:</p>
+                    <code>
+                        <ul>
+                            <li>list.append(x)</li>
+                            <li>list.extend(iterable)</li>
+                            <li>list.insert(i, x)</li>
+                            <li>list.remove(x)</li>
+                            <li>list.pop([i])</li>
+                        </ul>
+                    </code>
+                    <p>An example that uses most of the list methods:</p>
+                    <div class="code-box">
+                        <code>
+                            >>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana'] <br />
+                            >>> fruits.count('apple') <br />
+                            2 <br />
+                            >>> fruits.count('tangerine') <br />
+                            0 <br />
+                            >>> fruits.index('banana') <br />
+                            3 <br />
+                            >>> fruits.index('banana', 4)  # Find next banana starting at position 4 <br />
+                            6 <br />
+                            >>> fruits.reverse() <br />
+                            >>> fruits <br />
+                            ['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange'] <br />
+                            >>> fruits.append('grape') <br />
+                            >>> fruits <br />
+                            ['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange', 'grape'] <br />
+                            >>> fruits.sort() <br />
+                            >>> fruits <br />
+                            ['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear'] <br />
+                            >>> fruits.pop() <br />
+                            'pear' <br />
+                        </code>
+                    </div>
+                    <p>You might have noticed that methods like insert, remove or sort that only 
+                        modify the list have no return value printed – they return the default None. 
+                        This is a design principle for all mutable data structures in Python.</p>
+                </section>
+
+                <section class="main-section" id="Modules">
+                    <header>Modules</header>
+                    <p>If you quit from the Python interpreter and enter it again, the definitions you 
+                        have made (functions and variables) are lost. Therefore, if you want to write 
+                        a somewhat longer program, you are better off using a text editor to prepare 
+                        the input for the interpreter and running it with that file as input instead. 
+                        This is known as creating a script. As your program gets longer, you may want 
+                        to split it into several files for easier maintenance. You may also want to 
+                        use a handy function that you’ve written in several programs without copying 
+                        its definition into each program.</p>
+
+                    <p>To support this, Python has a way to put definitions in a file and use them in 
+                        a script or in an interactive instance of the interpreter. Such a file is 
+                        called a module; definitions from a module can be imported into other modules 
+                        or into the main module (the collection of variables that you have access to 
+                        in a script executed at the top level and in calculator mode).</p>
+
+                    <p>A module is a file containing Python definitions and statements. The file 
+                        name is the module name with the suffix .py appended. Within a module, the 
+                        module’s name (as a string) is available as the value of the global variable 
+                        __name__. For instance, use your favorite text editor to create a file called 
+                        fibo.py in the current directory with the following contents:</p>
+                
+                    <div class="code-box">
+                        <code>
+                            # Fibonacci numbers module <br />
+                            def fib(n):    # write Fibonacci series up to n <br />
+                                a, b = 0, 1 <br />
+                                while a < n: <br />
+                                    print(a, end=' ') <br />
+                                    a, b = b, a+b <br />
+                                print() <br /> <br />
+    
+                            def fib2(n):   # return Fibonacci series up to n <br />
+                                result = [] <br />
+                                a, b = 0, 1 <br />
+                                while a < n: <br />
+                                    result.append(a) <br />
+                                    a, b = b, a+b <br />
+                                return result <br />
+                        </code>
+                    </div>
+
+                    <p>Now enter the Python interpreter and import this module with the following 
+                        command:</p>
+                    <div class="code-box"><code>>>> import fibo</code></div>
+                    
+                    <p>This does not add the names of the functions defined in fibo directly to the 
+                        current namespace (see Python Scopes and Namespaces for more details); it only 
+                        adds the module name fibo there. Using the module name you can access the 
+                        functions:</p>
+                    <div class="code-box">
+                        <code>
+                            >>> fibo.fib(1000) <br />
+                            0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 <br />
+                            >>> fibo.fib2(100) <br />
+                            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] <br />
+                            >>> fibo.__name__ <br />
+                            'fibo' <br />
+                        </code>
+                    </div>
+
+                    <p>If you intend to use a function often you can assign it to a local name:</p>
+                    <div class="code-box">
+                        <code>
+                            >>> fib = fibo.fib <br />
+                            >>> fib(500) <br />
+                            0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 <br />
+                        </code>
+                    </div>
+
+                    <p class="credit">Source: <a href="https://docs.python.org/3/tutorial/" target="_blank">The Python Tutorial</a></p>
+                </section>
+            </main>
+        </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+    --background : #070F2B;
+    --divBackground: #1B1A55;
+    --divOutline: #535C91;
+    --fontColor: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 600px;
+    margin: 10px auto;
+    background-color: var(--background);
+    color: var(--fontColor);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body p {
+    font-size: 20px;
+}
+
+#title {
+    text-align: center;
+    padding-top: 6%;
+    margin-bottom: 40px;
+}
+
+.title h1 {
+    font-size: 30px;
+}
+
+#credit {
+    font-style: italic;
+    color: rgb(228, 228, 228);
+}
+
+#checker, #info {
+    border: 1px solid white;
+    width: 70%;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid var(--divOutline);
+    border-radius: 20px;
+}
+
+#checker {
+    background-color: var(--divBackground);
+}
+
+#checker p {
+    margin-bottom: 5px;
+}
+
+#text-input {
+    background: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 5px;
+    padding: 0px 10px;
+    border-color: white;
+    color: var(--fontColor);
+    height: 25px;
+}
+
+#text-input:focus {
+    outline: none;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #719ECE;
+    background-color: #070F2B;
+}
+
+button {
+    height: 33px;
+    width: 60px;
+    border-radius: 15px;
+}
+
+#result {
+    margin-bottom: 20px;
+}
+
+#info {
+    margin-top: 40px;
+    background-color: rgb(93, 0, 94);
+}
+
+.isPalindrome {
+    animation: isPalindrome 1s;
+    animation-fill-mode: forwards;
+}
+
+.notPalindrome {
+    animation: notPalindrome 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes isPalindrome {
+    0% {
+        box-shadow: 0px 0px 20px 2px rgb(255, 0, 187);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 2px rgb(0, 208, 255);
+    }
+
+}
+
+@keyframes notPalindrome {
+    0% {
+        box-shadow: 0px 0px 20px 2px rgb(0, 208, 255);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 2px rgb(255, 0, 187);
+    }
+}
