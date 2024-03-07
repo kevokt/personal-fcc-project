@@ -19,5 +19,119 @@ button = purchase-btn
 to do :
 Make the HTML and CSS √
 make a function that checks the hidden cases √
-create a button and EnterKey input
-make a function that calculate totalCID
+create a button and EnterKey input √
+
+now to make the algorithm for calculating the cash register
+-calculate totalCID √
+-subtract that total with the cash √
+-make status case 1a (totalCID < CASH) √
+-make status case 1b (cannot return the exact change)
+-make status case 2 
+-make status case 3 (hopefully i can figure it out on my own ;_;)
+
+
+
+MADMAN RAMBLEING, TRYING TO VISUALING THE ALGORITHM INGORNE PLEASE
+!!!!!!TEST 2!!!!!!
+cash   = 100.00
+price  =   3.26
+change =  96.74
+
+INVENTORY: 
+[
+    ["PENNY", 1.01], 
+    ["NICKEL", 2.05], 
+    ["DIME", 3.1], 
+    ["QUARTER", 4.25 => 3.75], 
+    ["ONE", 90], 
+    ["FIVE", 55 -> 50 -> 45], 
+    ["TEN", 20 -> 10 -> 0], 
+    ["TWENTY", 60 -> 40 -> 20 -> 0 ], 
+    ["ONE HUNDRED", 100]
+]
+
+ALGORITHM:
+                                        price <= currChange ? 
+Penny	            $0.01 (PENNY)       
+Nickle	            $0.05 (NICKEL)      
+Dime	            $0.1 (DIME)         10(0.24)
+Quarter	            $0.25 (QUARTER)     8(0.74) 9(0.49)
+Dollar	            $1 (ONE)            
+Five Dollars	    $5 (FIVE)           6(10.74) 7(5.74)
+Ten Dollars     	$10 (TEN)           4(30.74) 5(20.74)
+Twenty Dollars	    $20 (TWENTY)        1(96.74) 2(70.74) 3(50.74) 
+Hundred Dollars	    $100 (ONE HUNDRED)  
+MARKED FOR CHANGE: 
+TWENTY: 20,
+TWENTY: 20,
+TWENTY: 20,
+TEN: 10,
+TEN: 10,
+FIVE: 5,
+FIVE: 5
+QUARTER: 0.25,
+QUARTER: 0.25,
+DIME: 0.24
+
+
+LOOP 1: 
+CHANGE = 96.74 - 20 = 70.74
+CID    = 60 - 20    = 40 (TWENTY)
+
+LOOP 2: 
+CHANGE = 70.74 - 20 = 50.74
+CID    = 40 - 20    = 20 (TWENTY)
+
+LOOP 3: 
+CHANGE = 50.74 - 20 = 30.74
+CID    = 20 - 20    = 0 (TWENTY)
+
+LOOP 4: 
+CHANGE = 30.74 - 10 = 20.74
+CID    = 20 - 10    = 10 (TEN)
+
+LOOP 5: 
+CHANGE = 20.74 - 10 = 10.74
+CID    = 10 - 10    = 0 (TEN)
+
+LOOP 6: 
+CHANGE = 10.74 - 5 = 5.74
+CID    = 55 - 5    = 50 (FIVE)
+
+LOOP 7: 
+CHANGE = 5.74 - 5 = 0.74
+CID    = 50 - 5   = 45 (FIVE)
+
+LOOP 8: 
+CHANGE = 0.74 - 0.25 = 0.49
+CID    = 4.25 - 0.25 = 4.00 (QUARTER)
+
+LOOP 8: 
+CHANGE = 0.49 - 0.25 = 0.24
+CID    = 4.00 - 0.25 = 3.75 (QUARTER)
+
+
+TEST OUTPUT: 
+Status: OPEN 
+TWENTY: $60 
+TEN: $20 
+FIVE: $15 
+ONE: $1 
+QUARTER: $0.5
+DIME: $0.2 
+PENNY: $0.04
+
+MY STUPID OUTPUT: 
+TWENTY: 20,
+TWENTY: 20,
+TWENTY: 20,
+TEN: 10,
+TEN: 10,
+FIVE: 5,
+FIVE: 5
+QUARTER: 0.25,
+QUARTER: 0.25,
+DIME: 0.24
+
+IDK WHY ITS DIFFERENT HELP 
+ATLEAST THE FIRST 2 IS THE SAME 
