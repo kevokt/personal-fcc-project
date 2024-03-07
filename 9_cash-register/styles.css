@@ -1,0 +1,130 @@
+:root {
+    --background : #040713;
+    --divBackground: #151529;
+    --divOutline: #404664;
+    --fontColor: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--fontColor);
+    font-family: Verdana, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+#change-due {
+    background-color: var(--divBackground);
+    border: 1px solid var(--divOutline);
+    border-radius: 10px;
+    width: 200px;
+    margin: 20px auto;
+    padding-left: 10px;
+}
+
+#change-due p {
+    margin: 5px;
+    font-size: 13px;
+}
+
+#cash-input, #cash-register {
+    background-color: var(--divBackground);
+    border: 1px solid var(--divOutline);
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+#cash-input {
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#cash {
+    display: block;
+    margin: 10px auto;
+    width: 207px;
+    background-color: var(--background);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--divOutline);
+    color: var(--fontColor);
+    text-align: center;
+    height: 25px;
+}
+
+#cash:focus {
+    outline: none;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #5c5c5c;
+}
+
+input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+      }
+
+button {
+    width: 100px;
+    height: 25px;
+    border-radius: 15px;
+    border-style: solid;
+    color: white;
+    background-color: #222b4c;
+    margin: 0px auto;
+    border-color: #cacaca;
+}
+
+button:hover {
+    box-shadow: 0 0 5px #cacaca;
+    cursor: pointer;
+}
+
+#cash-register {
+    padding: 0;
+}
+
+.price {
+    text-align: center;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#cash-in-drawer {
+    background-color: var(--background);
+    border: 1px solid var(--divOutline);
+    border-radius: 9px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 299px;
+    margin: 10px auto;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+#cash-in-drawer p {
+    margin: 5px 10px 5px 10px;
+}
+
+span {
+    float: inline-end;
+}

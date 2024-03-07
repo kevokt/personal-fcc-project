@@ -1,0 +1,22 @@
+BUILD A CASH REGISTER CHANGE ALGORITHM
+
+it will need a price and cash in drawer.
+
+3 STATUS CASES: 
+1. Insufficient funds: if totalCID < cash || cannot return the exact change
+2. Closed: if totalCID is 0 after the purchase
+3. Open: cid > price and sorted from lowest to highest
+
+HIDDEN CASES:
+1. if cash < price = alert(ur poor);
+2. if cash == price = No change due
+ 
+HTML ID: 
+input = cash
+div = change-due (output)
+button = purchase-btn
+
+to do :
+Make the HTML and CSS
+create a button and EnterKey input
+make a function that calculate totalCID
