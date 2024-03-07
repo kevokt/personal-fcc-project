@@ -17,6 +17,7 @@ div = change-due (output)
 button = purchase-btn
 
 to do :
-Make the HTML and CSS
+Make the HTML and CSS √
+make a function that checks the hidden cases √
 create a button and EnterKey input
 make a function that calculate totalCID

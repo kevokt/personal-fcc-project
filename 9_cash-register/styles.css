@@ -1,5 +1,5 @@
 :root {
-    --background : #040713;
+    --background: #040713;
     --divBackground: #151529;
     --divOutline: #404664;
     --fontColor: #f4f4f4;
@@ -27,6 +27,10 @@ h1 {
     text-align: center;
 }
 
+#change-due:empty {
+    display: none;
+}
+
 #change-due {
     background-color: var(--divBackground);
     border: 1px solid var(--divOutline);
@@ -41,11 +45,12 @@ h1 {
     font-size: 13px;
 }
 
-#cash-input, #cash-register {
+#cash-input,
+#cash-register {
     background-color: var(--divBackground);
     border: 1px solid var(--divOutline);
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
     margin: 20px auto;
 }
 
@@ -78,9 +83,9 @@ h1 {
 }
 
 input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-         -webkit-appearance: none;
-      }
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 
 button {
     width: 100px;
@@ -91,6 +96,7 @@ button {
     background-color: #222b4c;
     margin: 0px auto;
     border-color: #cacaca;
+    padding-bottom: 0;
 }
 
 button:hover {
@@ -115,7 +121,7 @@ button:hover {
     border-radius: 9px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    width: 299px;
+    width: 249px;
     margin: 10px auto;
     margin-bottom: 0;
     font-size: 15px;
