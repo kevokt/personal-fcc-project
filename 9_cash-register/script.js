@@ -1,18 +1,4 @@
-// ORIGINAL PRICES AND CID
-// let price = 1.87;
-// let cid = [
-//   ["PENNY", 1.01],
-//   ["NICKEL", 2.05],
-//   ["DIME", 3.1],
-//   ["QUARTER", 4.25],
-//   ["ONE", 90],
-//   ["FIVE", 55],
-//   ["TEN", 20],
-//   ["TWENTY", 60],
-//   ["ONE HUNDRED", 100]
-// ];
-
-let price = 19.50;
+let price = 1.87;
 let cid = [
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
@@ -31,21 +17,36 @@ const btn = document.getElementById("purchase-btn");
 const priceDisplay = document.querySelector(".price");
 const cidList = document.querySelectorAll("span");
 
-// For displaying price in cash Register
-priceDisplay.textContent = `Price: $${price.toString()}`;
+const updateUI = (change) => {
+  // For displaying price in cash Register
+  priceDisplay.textContent = `Price: $${price.toString()}`;
 
-// For displaying cid in cash register
-cidList.forEach((price, index) => {
-  price.textContent = `$${cid[index][1]}`;
-});
+  // For displaying cid in cash register
+  cidList.forEach((price, index) => {
+    price.textContent = `$${cid[index][1]}`;
+  });
+
+  // Update cid in cash register
+  if (change) {
+    change.forEach(changeArr => {
+      const targetArr = cid.find(cidArr => cidArr[0] === changeArr[0]);
+      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+    })
+  }
+}
+
+const displayResult = (status, change) => {
+  changeDue.innerHTML = `<p>Status: ${status}</p>`;
+  change.map(money => changeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`);
+} 
 
 const calculateCID = (cid) => {
   var totalCID = 0;
-  for (var i = 0; i < cid.length - 1; i++){
+  for (var i = 0; i < cid.length; i++) {
     totalCID += cid[i][1];
   }
   return totalCID.toFixed(2);
-} 
+}
 
 const checkCashRegister = () => {
   // If customer pays less the price amount
@@ -61,18 +62,46 @@ const checkCashRegister = () => {
     return;
   }
 
-// now to make the algorithm for calculating the cash register
-// -make status case 1b (cannot return the exact change)
-// -make status case 2 
-// -make status case 3 (hopefully i can figure it out on my own ;_;)
-  const totalCID = calculateCID(cid);
-  const change = (cashInput.value - price).toFixed(2);
-  
-  // CASE 1A: IF totalCID < cash
-  if (totalCID < Number(cashInput.value)) {
+  let totalCID = calculateCID(cid);
+  let change = Number(cashInput.value) - price;
+  let reversedCID = [...cid].reverse();
+  let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
+  let result = {
+    status: "OPEN",
+    change: []
+  }
+
+  if (totalCID < change) {
     changeDue.innerHTML = `<p>Status: INSUFFICIENT_FUNDS</p>`;
-  } 
+  }
+
+  if (totalCID === change) {
+    result.status = 'CLOSED';
+  }
+
+  for (let i = 0; i <= reversedCID.length; i++) {
+    if (change > denominations[i] && change > 0) {
+      let count = 0;
+      let total = reversedCID[i][1];
+      while (total > 0 && change >= denominations[i]) {
+        total -= denominations[i];
+        change = parseFloat((change -= denominations[i]).toFixed(2));
+        count++;
+      }
+      if (count > 0) {
+        result.change.push([reversedCID[i][0], count * denominations[i]]);
+      }
+    }
+  }
+  if (change > 0) {
+    return (changeDue.innerHTML = `<p>Status: INSUFFICIENT_FUNDS</p>`);
+  }
+  console.log(result);
+  displayResult(result.status, result.change);
+  updateUI(result.change);
+  
 }
+
 
 // Call checkCashRegister when Purchase button is clicked
 btn.addEventListener("click", () => checkCashRegister());
@@ -83,3 +112,5 @@ cashInput.addEventListener("keydown", (e) => {
     checkCashRegister();
   }
 })
+
+updateUI();

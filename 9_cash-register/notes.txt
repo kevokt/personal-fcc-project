@@ -61,6 +61,7 @@ Five Dollars	    $5 (FIVE)           6(10.74) 7(5.74)
 Ten Dollars     	$10 (TEN)           4(30.74) 5(20.74)
 Twenty Dollars	    $20 (TWENTY)        1(96.74) 2(70.74) 3(50.74) 
 Hundred Dollars	    $100 (ONE HUNDRED)  
+
 MARKED FOR CHANGE: 
 TWENTY: 20,
 TWENTY: 20,
