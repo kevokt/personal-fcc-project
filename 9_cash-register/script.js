@@ -97,6 +97,8 @@ const checkCashRegister = () => {
     return (changeDue.innerHTML = `<p>Status: INSUFFICIENT_FUNDS</p>`);
   }
   console.log(result);
+
+  result.status = calculateCID(cid) < 1 ? "CLOSED" : "OPEN";
   displayResult(result.status, result.change);
   updateUI(result.change);
   
