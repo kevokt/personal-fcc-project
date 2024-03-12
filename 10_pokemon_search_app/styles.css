@@ -7,7 +7,6 @@
 
 * {
     box-sizing: border-box;
-    
 }
 
 body {
@@ -40,7 +39,8 @@ header h1 {
 
 #search-input {
     display: block;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 13px;
     width: 270px;
     background-color: var(--background);
     border-radius: 15px;
@@ -49,7 +49,7 @@ header h1 {
     border-color: var(--divOutline);
     color: var(--fontColor);
     text-align: center;
-    height: 25px;
+    height: 30px;
 }
 
 #search-input:focus {
@@ -59,14 +59,19 @@ header h1 {
     box-shadow: 0 0 5px #5c5c5c;
 }
 
+.line-seperator {
+    border-bottom: 1px solid var(--divOutline);
+    padding-top: 15px;
+}
+
 button {
     width: 100px;
-    height: 25px;
+    height: 30px;
     border-radius: 15px;
     border-style: solid;
     color: white;
     background-color: #222b4c;
-    margin: 0px auto;
+    margin: 15px auto;
     border-color: #cacaca;
     padding-bottom: 0;
 }
@@ -125,8 +130,9 @@ img {
 table {
     width: 100%;
     background-color: #161a2b;
-    border-collapse: separate;
+    border-collapse: inherit;
     border-spacing: 0;
+    border-radius: 15px;
 }
 
 table td, table th {
