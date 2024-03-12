@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Search App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>freeCodeCamp Certification Project<br />Pokémon Search App</h1>
+      <p>Made by KevVok / kevokt</p>
+    </header>
+
+    <div id="pokedex-container">
+      <div id="search-container">
+        <label for="search-input">Search for Pokémon Name or ID:</label>
+        <input type="text" id="search-input" />
+        <button class="search-button">Search</button>
+      </div>
+
+      <div id="pokemon-general-info">
+        <div id="name-id">
+            <span id="pokemon-name">BULBASAUR</span>
+            <span id="pokemon-id">#1</span>
+        </div>
+        <div id="weight-height">
+            <span id="weight">Weight: 69</span>
+            <span id="height">Height: 7</span>
+        </div>
+        <div id="img-container">
+            <img src="sample-img.png" />
+        </div>
+        <div id="types">
+            <span class="grass">GRASS</span>
+            <span class="poison">POISON</span></div>
+      </div>
+
+      <div id="pokemon-stat">
+        <table>
+            <tr>
+                <th>Base</th>
+                <th>Stats</th>
+            </tr>
+            <tr>
+                <td>HP:</td>
+                <td id="hp">45</td>
+            </tr>
+            <tr>
+                <td>Attack:</td>
+                <td id="attack">49</td>
+            </tr>
+            <tr>
+                <td>Defense:</td>
+                <td id="defense">49</td>
+            </tr>
+            <tr>
+                <td>Special Attack:</td>
+                <td id="special-attack">65</td>
+            </tr>
+            <tr>
+                <td>Special Defense:</td>
+                <td id="special-defense">65</td>
+            </tr>
+            <tr>
+                <td>Speed:</td>
+                <td id="speed">45</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
