@@ -25,7 +25,7 @@ header h1 {
 }
 
 #pokedex-container {
-    width: 500px;
+    width: 440px;
     border-radius: 30px;
     background-color: #151529;
     margin: auto;
@@ -85,6 +85,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 230px;
     align-items: center;
     margin-top: 30px;
     padding-top: 10px;
@@ -93,8 +94,12 @@ button:hover {
     border-radius: 15px;
 }
 
-#name-id, #weight-height {
+#name-id {
     font-size: 18px;
+}
+
+#weight-height {
+    font-size: 13px;
 }
 
 img {
@@ -106,17 +111,88 @@ img {
     height: 30px;
     width: 80px;
     text-align: center;
+    text-shadow: 1px 1px black;
     padding-top: 5px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+/*
+    Pokemon type colours 
+    credit: 
+    https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
+*/
+
+.normal {
+    background-color: #A8A77A;
+}
+
+.fire {
+    background-color: #EE8130;
+}
+
+.water {
+    background-color: #6390F0;
+}
+
+.electric {
+    background-color: #F7D02C;
 }
 
 .grass {
-    background-color: green;
+    background-color: #7AC74C;
+}
+
+.ice {
+    background-color: #96D9D6;
+}
+
+.fighting {
+    background-color: #C22E28;
 }
 
 .poison {
-    background-color: purple;
+    background-color: #A33EA1;
+}
+
+.ground {
+    background-color: #E2BF65;
+}
+
+.flying {
+    background-color: #A98FF3;
+}
+
+.psychic {
+    background-color: #F95587;
+}
+
+.bug {
+    background-color: #A6B91A;
+}
+
+.rock {
+    background-color: #B6A136;
+}
+
+.ghost {
+    background-color: #735797;
+}
+
+.dragon {
+    background-color: #6F35FC;
+}
+
+.dark {
+    background-color: #705746;
+}
+
+.steel {
+    background-color: #B7B7CE;
+}
+
+.fairy {
+    background-color: #D685AD;
 }
 
 #pokemon-stat {
