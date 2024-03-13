@@ -12,3 +12,7 @@ You should have an element with an id of "defense"
 You should have an element with an id of "special-attack"
 You should have an element with an id of "special-defense"
 You should have an element with an id of "speed"
+
+BUGS: 
+-TYPES not cleared after new search
+-img element need to have id of "sprite"

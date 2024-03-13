@@ -1,5 +1,6 @@
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
+
 // General Info Decleration
 const docName = document.getElementById("pokemon-name");
 const docId = document.getElementById("pokemon-id");
@@ -25,6 +26,7 @@ const formatName = (input) => {
 };
 
 const formatGeneralInfo = () => {
+    docTypes.innerHTML = ``; // For clearing types beetween search
     const { name, id, weight, height, sprites, types } = pokemonData;
     // Display Name and ID
     docName.innerText = name.toUpperCase();
@@ -33,7 +35,7 @@ const formatGeneralInfo = () => {
     docWeight.innerText = `Weight: ${weight}`;
     docHeight.innerText = `Height: ${height}`;
     // Display IMG
-    docImg.innerHTML = `<img src="${sprites.front_default}" alt="${name} sprite" />`
+    docImg.innerHTML = `<img id="sprite" src="${sprites.front_default}" alt="${name} sprite" />`
     // Displaying Types
     types.map(el => {
         let typeName = el.type.name;
