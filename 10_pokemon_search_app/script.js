@@ -1,12 +1,20 @@
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
-
+// General Info Decleration
 const docName = document.getElementById("pokemon-name");
 const docId = document.getElementById("pokemon-id");
 const docWeight = document.getElementById("weight");
 const docHeight = document.getElementById("height");
 const docImg = document.getElementById("img-container");
 const docTypes = document.getElementById("types");
+
+// Stats Info Decleration
+const docHpStat = document.getElementById("hp");
+const docAttackStat = document.getElementById("attack");
+const docDefeseStat = document.getElementById("defense");
+const docSAStat = document.getElementById("special-attack");
+const docSDStat = document.getElementById("special-defense");
+const docSpeedStat = document.getElementById("speed");
 
 let isInputID = true;
 let link = ``;
@@ -33,6 +41,20 @@ const formatGeneralInfo = () => {
     })
 };
 
+const formatStats = () => {
+    const { stats } = pokemonData;
+    let statData = []
+    stats.map((el) => {
+       statData.push(el.base_stat); 
+    });
+    docHpStat.innerText = statData[0];
+    docAttackStat.innerText = statData[1];
+    docDefeseStat.innerText = statData[2];
+    docSAStat.innerText = statData[3];
+    docSDStat.innerText = statData[4];
+    docSpeedStat.innerText = statData[5];
+}
+
 const fetchData = async () => {
     try {
         const resolve = await fetch(link);
@@ -40,6 +62,7 @@ const fetchData = async () => {
         pokemonData = data;
         console.log(pokemonData);
         formatGeneralInfo();
+        formatStats();
     } catch (err) {
         console.log(err);
         alert("Pokémon not found");
