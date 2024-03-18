@@ -17,7 +17,6 @@ const docSAStat = document.getElementById("special-attack");
 const docSDStat = document.getElementById("special-defense");
 const docSpeedStat = document.getElementById("speed");
 
-let isInputID = true;
 let link = ``;
 let pokemonData = [];
 
@@ -62,7 +61,6 @@ const fetchData = async () => {
         const resolve = await fetch(link);
         const data = await resolve.json();
         pokemonData = data;
-        console.log(pokemonData);
         formatGeneralInfo();
         formatStats();
     } catch (err) {
@@ -73,13 +71,10 @@ const fetchData = async () => {
 
 searchBtn.addEventListener("click", () => {
     if (!isNaN(searchInput.value)) {
-        isInputID = true;
         link = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchInput.value}`;
     } else {
-        isInputID = false;
         let inputName = formatName(searchInput.value);
         link = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${inputName}`;
     }
-    console.log(link);
     fetchData();
 });
