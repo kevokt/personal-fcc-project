@@ -2,7 +2,7 @@ View my projects:
 
 #### Responsive Web Design
 <a href="https://htmlpreview.github.io/?https://github.com/kevokt/personal-fcc-project/blob/main/04_product-landing-page/index.html
-" target="_blank">Product Landing Page</a>
+" target="_blank">Product Landing Page</a> (There is supposed to be a fontawesome logo in the feature div, but sadly it is not showing in the htmlpreview)
 
 <a href="https://htmlpreview.github.io/?https://github.com/kevokt/personal-fcc-project/blob/main/03_technical-doc-page/index.html
 " target="_blank">Technical Documentation Page</a>
