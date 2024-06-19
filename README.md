@@ -12,7 +12,7 @@
 " target="_blank">Technical Documentation Page</a></li>
 </ul>
 
-#### Javscript
+#### Javascript
 <p>The pages is not resposive, but I used javascript to create the animation!</p>
 <ul>
   <li><a href="https://htmlpreview.github.io/?https://github.com/kevokt/personal-fcc-project/blob/main/06_palindrome-checker/index.html" target="_blank">Palindrome Checker</a></li>
