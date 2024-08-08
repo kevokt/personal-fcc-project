@@ -25,16 +25,21 @@ const formatName = (input) => {
 };
 
 const formatGeneralInfo = () => {
-    docTypes.innerHTML = ``; // For clearing types beetween search
+    docTypes.innerHTML = ``; // For clearing types between search
+
     const { name, id, weight, height, sprites, types } = pokemonData;
+
     // Display Name and ID
     docName.innerText = name.toUpperCase();
     docId.innerText = `#${id}`;
+
     // Display Weight and Height
     docWeight.innerText = `Weight: ${weight}`;
     docHeight.innerText = `Height: ${height}`;
+
     // Display IMG
     docImg.innerHTML = `<img id="sprite" src="${sprites.front_default}" alt="${name} sprite" />`
+
     // Displaying Types
     types.map(el => {
         let typeName = el.type.name;
@@ -45,9 +50,11 @@ const formatGeneralInfo = () => {
 const formatStats = () => {
     const { stats } = pokemonData;
     let statData = []
+
     stats.map((el) => {
        statData.push(el.base_stat); 
     });
+
     docHpStat.innerText = statData[0];
     docAttackStat.innerText = statData[1];
     docDefeseStat.innerText = statData[2];
@@ -61,6 +68,7 @@ const fetchData = async () => {
         const resolve = await fetch(link);
         const data = await resolve.json();
         pokemonData = data;
+        
         formatGeneralInfo();
         formatStats();
     } catch (err) {
